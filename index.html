@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🎬 Binge Box</div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active" id="home-link">Home</a></li>
+        <li><a href="#" id="favorites-link">Favorites</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="search-section">
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for movies/series">
+    <button id="searchBtn">🔍</button>
+    <ul id="suggestions" class="suggestions-list"></ul>
+  </div>
+    <!-- <select id="genre-filter">
+      <option value="">All Genres</option>
+      <option value="28">Action</option>
+      <option value="35">Comedy</option>
+      <option value="18">Drama</option>
+      <option value="27">Horror</option>
+      <option value="10749">Romance</option>
+    </select> -->
+  </section>
+
+  <main>
+    <h2 class="section-title">Discover Movies/Series</h2>
+    <div id="movies-container" class="movies-grid">
+    </div>  
+  </main>
+
+  <section id="favorites-section" class="hidden">
+    <h2 class="section-title"> My Favorites</h2>
+    <div id="favorites-container" class="movies-grid">
+    </div>
+  </section>
+
+  <section id="details-section" class="hidden">
+    <button id="back-btn">⬅ Back</button>
+    <div id="details-container"></div>
+  </section>
+
+  <footer class="footer">
+    <p>Developed with passion to combine creativity, technology, and functionality in one place.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

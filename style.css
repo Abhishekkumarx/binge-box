@@ -1,0 +1,269 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff4757;
+  cursor: pointer;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #ff4757;
+}
+
+/* Search Section */
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: #181818;
+  gap: 1rem;
+}
+
+.search-section input {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  width: 300px;
+  background: #222;
+  color: white;
+}
+
+.search-section button {
+  padding: 0.6rem 1rem;
+  background: #ff4757;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-section button:hover {
+  background: #e84118;
+}
+
+.search-section select {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: white;
+}
+
+/* Movies Grid */
+.section-title {
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-size: 1.5rem;
+  color: #ff4757;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.movie-card {
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  display: block;
+}
+
+.movie-info {
+  padding: 0.8rem;
+}
+
+.movie-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.movie-rating {
+  font-size: 0.9rem;
+  color: #ffdd59;
+}
+
+/* Favorite Button */
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  color: #ff4757;
+  font-size: 1.2rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.favorite-btn.active {
+  background-color: gold;
+  color: black;
+}
+
+/* Footer */
+.footer {
+  background: #181818;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: #aaa;
+}
+
+/* Hidden */
+.hidden {
+  display: none;
+}
+
+
+/* --- Details Section --- */
+.details-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    background: #1c1c1c;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    color: #eee;
+    margin-top: 2rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.details-card img {
+    width: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.details-info {
+    max-width: 700px;
+}
+
+.details-info h2 {
+    font-size: 2rem;
+    color: #ff3d5a;
+    margin-bottom: 0.5rem;
+}
+
+.details-info .tagline {
+    font-style: italic;
+    color: #bbb;
+    margin-bottom: 1rem;
+}
+
+.details-info p {
+    margin: 0.4rem 0;
+    line-height: 1.6;
+}
+
+/* --- Back Button --- */
+#back-btn {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.6rem 1.2rem;
+    background: #ff3d5a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#back-btn:hover {
+    background: #e0354d;
+    transform: translateY(-2px);
+}
+
+#back-btn:active {
+    transform: translateY(1px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.suggestions-list {
+  position: absolute;
+  background: #222;
+  color: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 300px; /* same width as search input */
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.suggestions-list li:hover {
+  background: #444;
+}
