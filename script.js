@@ -34,20 +34,25 @@ function displayMovies(movies) {
     });
 }
 
-search.addEventListener('click',async function(){
-
-    let searchTerm=searchBox.value;
-    if(searchTerm===''){
-        alert('please provide any show')
-    }else{
-      let movieData = await getMovies(searchTerm);
-      if (movieData && movieData.Search) {
-
+async function handleSearch() {
+    let searchTerm = searchBox.value;
+    
+    if (searchTerm === '') {
+        alert('please provide any show');
+    } else {
+        let movieData = await getMovies(searchTerm);
+        
+        if (movieData && movieData.Search) {
             displayMovies(movieData.Search);
-
         } else {
             movieContainer.innerHTML = `<p style="color: #aaa; text-align: center;">No results found for "${searchTerm}"</p>`;
         }
     }
-
+}
+searchBox.addEventListener('keyup', function(event){
+    if(event.key === 'Enter')
+    {
+        handleSearch();
+            //searchBox.value = '';
+    }
 })
