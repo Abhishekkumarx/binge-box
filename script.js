@@ -1,7 +1,8 @@
 const apiKey = 'aa35f6e4';
 const searchBox = document.querySelector('#searchInput');
 const search = document.querySelector('#searchBtn');
-const movieContainer= document.querySelector('#movies-container')
+const movieContainer= document.querySelector('#movies-container');
+const home =document.querySelector('#home-link');
 async function getMovies(name) {
     try {
         const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${name}`;
@@ -55,4 +56,9 @@ searchBox.addEventListener('keyup', function(event){
         handleSearch();
             //searchBox.value = '';
     }
+})
+home.addEventListener('click', async function(){
+    const moviedata= await getMovies('thor');
+    displayMovies(moviedata.Search);
+
 })
